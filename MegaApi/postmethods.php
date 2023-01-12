@@ -1,0 +1,204 @@
+<?php
+
+
+function authorization($connect, $data){
+    $Emloyers=$connect->prepare("select * from Employees where Email=? and Password=?");
+    $Emloyers->execute(array(strval($data["email"]), md5(strval($data["password"]) )));
+    $listUser=$Emloyers->fetchAll();
+    //echo md5(strval($data["password"]) ); die();
+    if(count($listUser)==0){
+        $responce=[
+            "status"=>false,
+            "message"=>"user not found!"
+        ];
+        http_response_code(404);
+    }
+    else{
+ 
+      //  print_r($listUser); die();
+        $responce=[
+            "status"=>true,
+            "message"=>"Authorizated!",
+            "surname"=>$listUser[0]["Surename"],
+            "firstname"=>$listUser[0]["LastName"],
+            "name"=>$listUser[0]["Name"],
+            "position"=>$listUser[0]["Position"],
+            "employer_id"=>$listUser[0]["ID_Employees "]
+        ];
+        http_response_code(200);
+    }
+    echo json_encode($responce);
+ }
+
+
+
+
+ function updateEmploye($connect, $data){
+    try{
+
+        //var_dump($data);
+        //print_r($data);die();
+        $selectPosts=$connect->prepare("UPDATE `Employees` SET `Surename`=?,`Name`=?,`LastName`=?,`PasportNumber`=?,`PasportSiries`=?,`Snils`=?,`Position`=?, `Salary`=? WHERE `ID_Employees`=?");
+        $selectPosts->execute(array(
+            strval($data["middlename"]),
+            strval($data["firstname"]),
+            strval($data["lasttname"]),
+            strval($data["passportNumber"]),
+            strval($data["passportSiries"]),
+            strval($data["snils"]),
+            $data["position"],
+            $data["salary"],
+            $data["id_employer"],
+            )
+        );
+        $responce=[
+         "status"=>true,
+         "message"=>"employer updated"
+        ];
+        echo json_encode($responce);
+    } catch (PDOException $e) {
+         $responce=[
+            "status"=>false,
+            "message"=>"employe not updated"
+        ];
+        echo json_encode($responce);
+    }
+}
+
+function deleteOrder($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+       // print_r($data);
+          $deleteUser =$connect->prepare("DELETE FROM `Order` WHERE ID_Order=?");
+          $deleteUser ->execute(array(
+            $data["id"]
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"order was deleted"
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"order wasn't deleted"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
+function updateOrder($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+       // print_r($data);
+          $deleteUser =$connect->prepare("UPDATE `Order` SET `Status`=? WHERE ID_Order=?");
+          $deleteUser ->execute(array(
+            strval($data["status"]),
+            $data["id"]
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"order was updated"
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"order wasn't updated"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
+
+
+
+function removeEployer($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+          $deleteUser =$connect->prepare("DELETE FROM `Employees` WHERE ID_Employees=?");
+          $deleteUser ->execute(array($data["id"]));
+  
+          $selectUsers=$connect->prepare("Select * from Employees where ID_Employees=?");
+          $selectUsers->execute(array(strval($data["id"])));
+          if(count($selectUsers->fetchAll())>0){
+              $responce=[
+                  "status"=>false,
+                  "message"=>"user not deleted"
+              ];
+              echo json_encode($responce);
+              die();
+          }else{
+              $responce=[
+                  "status"=>false,
+                  "message"=>"user deleted"
+              ];
+              echo json_encode($responce);
+              die();
+          }
+      } catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"user not deleted"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
+  function createEmploye ($connect, $data){
+
+    //var_dump($data); die();
+    // print_r( $data); die();
+     try{
+
+
+
+         $createEmploye=$connect->prepare(
+         "insert into Employees (Surename,Name,LastName,PasportNumber,PasportSiries,Snils,Position,Salary, Email, Password)
+         values (?,?,?,?,?,?,?,?,?,?)"
+         );
+         
+         //if(empty($data["middlename"])) $data["middlename"]="-";
+         $createEmploye->execute(array(
+            strval($data["middlename"]),
+            strval($data["firstname"]),
+            strval($data["lastname"]),
+            strval($data["passportNumber"]),
+            strval($data["passportSiries"]),
+            strval($data["snils"]),
+            $data["position"],
+            $data["salary"],
+            $data["email"],
+            md5(strval($data["password"]))
+         ));
+         //print_r($data); die();
+         $responce=[
+             "status"=>true,
+             "message"=>"user created"
+         ];
+         echo json_encode($responce);
+         //die();
+         
+        // exit();
+         //$addedEmploye=$createEmploye->fetchAll();
+     } catch (PDOException $e) {
+          $responce=[
+             "status"=>false,
+             "message"=>"user not created"
+        ];
+         echo json_encode($responce);
+    }
+
+}
+  

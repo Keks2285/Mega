@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "gQ6arNrZmfhpYAP5XtY3zj35ODaGLiuZeB2/y4+8A5y6YTrVi/Xl7iAnC5J1vO6CCt/DzBFoZV+kOh3eTFEDXw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ilyich\\OneDrive\\Документы\\GitHub\\MegaKursach\\Mega\\Mega\\Mega.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ilyich\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\materialdesigncolors\\2.1.0\\materialdesigncolors.2.1.0.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\materialdesignthemes\\4.7.0\\materialdesignthemes.4.7.0.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\restsharp\\108.0.3\\restsharp.108.0.3.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\scottplot\\4.1.60\\scottplot.4.1.60.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\system.drawing.common\\4.7.2\\system.drawing.common.4.7.2.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\system.text.json\\5.0.1\\system.text.json.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

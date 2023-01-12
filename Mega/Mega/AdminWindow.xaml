@@ -1,0 +1,29 @@
+﻿<Window x:Class="Mega.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mega"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="479*"></ColumnDefinition>
+            <ColumnDefinition Width="158*"></ColumnDefinition>
+            <ColumnDefinition Width="163*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Background="White" Margin="50,40,50,24">
+            <ListView  x:Name="BackupsList" >
+
+            </ListView>
+        </Grid>
+        <Button x:Name="CreatePoint" Content="Создать бэкап"  VerticalAlignment="Top"  Height="32" Margin="10,58,10,0" Grid.Column="1" Click="CreatePoint_Click"/>
+        <Button x:Name="ImportPoint" Grid.Column="2" Content="Загрузить бэкап"   VerticalAlignment="Top"  Cursor="Hand" Height="32" Margin="10,58,10,0" Click="ImportPoint_Click" />
+
+    </Grid>
+</Window>
