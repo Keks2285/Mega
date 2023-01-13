@@ -72,12 +72,12 @@ function executebackup($data)
     "Employees",
     "Categories"
 );
-// foreach($tables as $table){
-//   $result = mysqli_query($connection,"Delete from ".$table." where 1");
- 
-// }
+//   foreach($tables as $table){
+//    $result = mysqli_query($connection,"Delete from ".$table." where 1");
+
+//  }
 foreach($tables as $table){
-  $result = mysqli_query($connection,"DROP TABLE ".$table);
+  $result = mysqli_query($connection,"DROP TABLE "."`$table`");
  
 }
   $filename="../backupFiles/".$data["nameFile"].".sql";

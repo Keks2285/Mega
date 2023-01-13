@@ -14,5 +14,6 @@ namespace Mega
         public static BindingList<Employees> EmployeesList = new BindingList<Employees>();
         public static BindingList<Order> OrderList = new BindingList<Order>();
         public static BindingList<DishesInOrder> DishesInOrderList = new BindingList<DishesInOrder>();
+        public static BindingList<Ingridients> IngridientsList = new BindingList<Ingridients>();
     }
 }

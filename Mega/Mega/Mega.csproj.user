@@ -16,6 +16,9 @@
     <Compile Update="EmployerCreate.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="IngridientsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="KadrWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EmployerCreate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="IngridientsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="KadrWindow.xaml">

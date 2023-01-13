@@ -30,6 +30,7 @@ switch ($_SERVER['REQUEST_METHOD']){
             case "getEmployees": getEmployees($connect); break;
             case "getOrders": getOrders($connect); break;
             case "getDishesInOrders": getDishesInOrders($connect); break;
+            case "getIngridients": getIngridients($connect); break;
         }
 
     }

@@ -73,6 +73,7 @@ function deleteOrder($connect, $data){
           $deleteUser ->execute(array(
             $data["id"]
         ));
+
         $responce=[
             "status"=>true,
             "message"=>"order was deleted"

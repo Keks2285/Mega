@@ -15,14 +15,17 @@ CREATE TABLE `Employees` (
   `LastName` varchar(50) NOT NULL,
   `PasportNumber` int NOT NULL,
   `PasportSiries` int NOT NULL,
-  `Snils` int NOT NULL,
   `Position` varchar(40) NOT NULL,
   `Salary` int NOT NULL,
   `Email` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
+  `Snils` varchar(11) NOT NULL,
   PRIMARY KEY (`ID_Employees`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-INSERT INTO Employees VALUES("1","Afvbkbz","bvz","Jnxtcndj","111111","2222","12348498","Администратор","75000","example@gmail.com","aa5b9f5dbe9ad5f96a4235e85ed897de");
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO Employees VALUES("1","нпанга","рпкер","рврепр","111111","2222","Администратор","75000","example@gmail.com","aa5b9f5dbe9ad5f96a4235e85ed897de","56454456");
+INSERT INTO Employees VALUES("2","твоаров","ыогмрг","гавпир","12365","1542","Кадровый менеджер","15622","example1@gmail.com","aa5b9f5dbe9ad5f96a4235e85ed897de","566146545");
+INSERT INTO Employees VALUES("6","пупуке","гфваргыуа","ваыуав","1111","1111","Повар","89748","fufhgufh@vfh.com","aa5b9f5dbe9ad5f96a4235e85ed897de","45484584645");
+INSERT INTO Employees VALUES("8","ацаца","ауыцацуы","ацуаува","4848","8985","сывапкцуа","4562","example2@gmail.com","9c9d1e7110a8c27d9aec8530633e6776","21654549848");
 
 CREATE TABLE `Dishes` (
   `ID_Dishes` int NOT NULL AUTO_INCREMENT,
@@ -46,14 +49,20 @@ CREATE TABLE `Order` (
   `Cost` int NOT NULL,
   `Status` varchar(10) NOT NULL,
   PRIMARY KEY (`ID_Order`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `Order` VALUES("10","58117","13.01.2023 8:55:18","213","Оформлен");
+INSERT INTO `Order` VALUES("11","2274","13.01.2023 10:08:35","234","Оформлен");
+INSERT INTO `Order` VALUES("12","37603","13.01.2023 10:08:48","234","Оформлен");
 
 CREATE TABLE `Ingredients` (
   `ID_Ingredients` int NOT NULL AUTO_INCREMENT,
   `NameIngredients` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Ingredients`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 INSERT INTO Ingredients VALUES("1","Огурчик");
+INSERT INTO Ingredients VALUES("2","Помидор");
+INSERT INTO Ingredients VALUES("3","Котлета куриная");
+INSERT INTO Ingredients VALUES("4","Котлета говяжая");
 
 CREATE TABLE `DishesInCategory` (
   `ID_DishesInCategory` int NOT NULL AUTO_INCREMENT,
@@ -116,7 +125,13 @@ CREATE TABLE `DishesInOrder` (
   KEY `dises_fk` (`Dishes_ID`),
   CONSTRAINT `dises_fk` FOREIGN KEY (`Dishes_ID`) REFERENCES `Dishes` (`ID_Dishes`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `oder_fk` FOREIGN KEY (`Order_ID`) REFERENCES `Order` (`ID_Order`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-INSERT INTO DishesInOrder VALUES("1","1","1");
-INSERT INTO DishesInOrder VALUES("3","3","9");
-INSERT INTO DishesInOrder VALUES("4","5","9");
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO DishesInOrder VALUES("5","2","10");
+INSERT INTO DishesInOrder VALUES("6","3","10");
+INSERT INTO DishesInOrder VALUES("7","4","10");
+INSERT INTO DishesInOrder VALUES("8","1","11");
+INSERT INTO DishesInOrder VALUES("9","3","11");
+INSERT INTO DishesInOrder VALUES("10","4","11");
+INSERT INTO DishesInOrder VALUES("11","1","12");
+INSERT INTO DishesInOrder VALUES("12","3","12");
+INSERT INTO DishesInOrder VALUES("13","4","12");

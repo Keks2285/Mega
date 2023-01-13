@@ -35,10 +35,16 @@ namespace Mega
         {
             if (ModelsRepository.DishesList.Count==0)
             {
-                var req = new RestRequest("/getDishes", Method.Get);
-                req.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-                var res = Helper.client.Get(req);
-                ModelsRepository.DishesList = JsonConvert.DeserializeObject<BindingList<Dishes>>(res.Content);
+                try { 
+                    var req = new RestRequest("/getDishes", Method.Get);
+                    req.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+                    var res = Helper.client.Get(req);
+                    ModelsRepository.DishesList = JsonConvert.DeserializeObject<BindingList<Dishes>>(res.Content);
+                }
+                catch
+                {
+                    return;
+                }
             }
             Menu.ItemsSource = ModelsRepository.DishesList;
         }

@@ -50,10 +50,12 @@ namespace Mega
                     ModelsRepository.DishesInOrderList.Add(dishe);
                 }
             ModelsRepository.OrderList.ListChanged += _orders_CollectionChanged;
+            //ModelsRepository.OrderList.ListChanged += null;
             //ModelsRepository.EmployeesList.ListChanged += _employes_CollectionChanged;
         }
         private void _orders_CollectionChanged(object sender, ListChangedEventArgs e)
         {
+            if (OrdersGrid.SelectedItem == null) return;
             Order order = (Order)OrdersGrid.SelectedItem;
             var requpdateOrder = new RestRequest("/updateOrder", Method.Post);
             requpdateOrder.AddHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -97,6 +99,13 @@ namespace Mega
                 reqdeleteOrder.AddParameter("id", (OrdersGrid.SelectedItem as Order).ID_Order);
                 var resdeleteOrder = Helper.client.Post(reqdeleteOrder);
             }
+        }
+
+        private void IngridientsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new IngridientsWindow();
+            w.Show();
+            this.Hide();
         }
     }
 }
