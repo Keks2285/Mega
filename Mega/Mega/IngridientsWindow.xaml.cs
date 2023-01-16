@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,13 +36,45 @@ namespace Mega
                     ModelsRepository.IngridientsList.Add(ingridient);
                 }
             IngridientsGrid.ItemsSource = ModelsRepository.IngridientsList;
-
+            ModelsRepository.IngridientsList.ListChanged += _ingridient_CollectionChanged;
             DishesDg.ItemsSource = ModelsRepository.DishesList;
+        }
+
+        private void _ingridient_CollectionChanged(object sender, ListChangedEventArgs e)
+        {
+
+            if (IngridientsGrid.SelectedValue == null) return;
+
+            Ingridients ingridient = (Ingridients)IngridientsGrid.SelectedItem;
+            var req = new RestRequest("/updateIngridient", Method.Post);
+            req.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+            req.AddParameter("id", ingridient.ID_Ingredients);
+            req.AddParameter("name", ingridient.NameIngredients);
+            var res = Helper.client.Post(req);
         }
 
         private void IngridientsGrid_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void AddIngridient_Click(object sender, RoutedEventArgs e)
+        {
+            if (NameIngridientTb.Text.Length < 2) {
+                MessageBox.Show("Название слишком короткое или пустое");
+                return;
+            }
+
+            //Ingridients ingridient = (Ingridients)IngridientsGrid.SelectedItem;
+            var req = new RestRequest("/createIngridient", Method.Post);
+            req.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+            req.AddParameter("name", NameIngridientTb.Text);
+            var res = Helper.client.Post(req);
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(res.Content);
+            if (data.id.Value==0)
+            {
+                MessageBox.Show("Не удалось добавить ингридиент");
+            }
         }
     }
 }

@@ -9,6 +9,9 @@ namespace Mega.Models
 {
     public class Ingridients:INotifyPropertyChanged
     {
+       public  Ingridients(){
+
+        }
         public int ID_Ingredients { get; set;}
 
         private string _nameIngridients;

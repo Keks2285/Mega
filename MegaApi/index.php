@@ -20,6 +20,8 @@ switch ($_SERVER['REQUEST_METHOD']){
             case "createEmploye": createEmploye($connect, $_POST); break;
             case "updateOrder": updateOrder($connect, $_POST); break;
             case "deleteOrder": deleteOrder($connect, $_POST); break;
+            case "updateIngridient": updateIngridient($connect, $_POST); break;
+            case "createIngridient": createIngridient($connect, $_POST); break;
         }
     }
     break;

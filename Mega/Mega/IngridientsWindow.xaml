@@ -15,7 +15,7 @@
 
 
         </DataGrid>
-        <Button Content="Добавить ингридиент" HorizontalAlignment="Left" Margin="256,372,0,0" VerticalAlignment="Top" Height="40" Width="181"/>
+        <Button x:Name="AddIngridient" Content="Добавить ингридиент" HorizontalAlignment="Left" Margin="256,372,0,0" VerticalAlignment="Top" Height="40" Width="181" Click="AddIngridient_Click"/>
         <DataGrid CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False" x:Name="DishesDg" ColumnWidth="*"  Margin="571,56,10,107" SelectionChanged="IngridientsGrid_Copy_SelectionChanged"   >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding NameDishes}"  CanUserSort="True" Header="Название"/>
@@ -27,10 +27,10 @@
         </DataGrid>
 
         <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="40" Margin="0,372,687,0" >
-            <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="FirstNameTb" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Название ингридиента"  Margin="9,0,9,0" Height="40"/>
+            <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="NameIngridientTb" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Название ингридиента"  Margin="9,0,9,0" Height="40"/>
         </Border>
         <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="40" Margin="248,56,388,0" >
-            <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="NameIngridientTb" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Название блюда"  Margin="9,0,9,0" Height="40"/>
+            <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="NameDishTb" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Название блюда"  Margin="9,0,9,0" Height="40"/>
         </Border>
         <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="40" Margin="248,101,539,0" >
             <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="CostTb" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Стоимость блюда"  Margin="9,0,9,0" Height="40"/>

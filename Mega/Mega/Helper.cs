@@ -10,7 +10,7 @@ namespace Mega
 {
     public class Helper
     {
-        public static RestClient client = new RestClient("http://192.168.182.74:8080/MegaApi/"); //192.168.1.49
+        public static RestClient client = new RestClient("http://192.168.1.49:8080/MegaApi/"); //192.168.1.49 192.168.182.74
         public static bool CheckPostName(string postName)
         {
             foreach (char a in postName)

@@ -118,6 +118,62 @@ function updateOrder($connect, $data){
      
   }
 
+  function createIngridient($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+     //   print_r($data);
+          $deleteUser =$connect->prepare("INSERT INTO `Ingredients`( `NameIngredients`) VALUES (?)");
+          $deleteUser ->execute(array(
+            strval($data["name"])
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"ingridient was created",
+            "id"=>$connect->lastInsertId()
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"ingridient wasn't created"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
+
+
+
+  function updateIngridient($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+        print_r($data);
+          $deleteUser =$connect->prepare("UPDATE `Ingredients` SET `NameIngredients`=? WHERE `ID_Ingredients`=?");
+          $deleteUser ->execute(array(
+            strval($data["name"]),
+            $data["id"]
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"ingridient was updated"
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"ingridient wasn't updated"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
 
 
 

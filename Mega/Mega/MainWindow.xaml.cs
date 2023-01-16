@@ -28,6 +28,7 @@ namespace Mega
         Order order = new Order();
         public MainWindow()
         {
+            //ModelsRepository.init();
             InitializeComponent();
         }
 
