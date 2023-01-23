@@ -44,6 +44,31 @@ namespace Mega
                 }
             EmployeesGrid.ItemsSource = ModelsRepository.EmployeesList;
             ModelsRepository.EmployeesList.ListChanged += _employes_CollectionChanged;
+
+
+            double[] values = { 0, 0, 0, 0 };
+            string [] statuts = { "Повар", "Кадровый менеджер", "Администратор","Кладовщик"  };
+            double[] positions = { 0, 1, 2, 3 };
+            for (int i = 0; i < 4; i++)
+            {
+                var Employers = from emloyers in ModelsRepository.EmployeesList
+                                where
+                                emloyers.Position == statuts[i]
+                                select emloyers;
+                foreach (Employees employe in Employers)
+                {
+                    values[i] += 1;
+                }
+
+            }
+            string[] labels = { "Повар", "Кадровый менеджер", "Администратор", "Кладовщик" };
+            EmployersStatistic.Plot.AddBar(values, positions);
+            EmployersStatistic.Plot.XTicks(positions, labels);
+            EmployersStatistic.Plot.SetAxisLimits(yMin: 0);
+            EmployersStatistic.Plot.XAxis.Grid(false);
+            EmployersStatistic.Plot.SaveFig("stats_histogram.png");
+            EmployersStatistic.Refresh();
+
         }
         private void _employes_CollectionChanged(object sender, ListChangedEventArgs e)
         {

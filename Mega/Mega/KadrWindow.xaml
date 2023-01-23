@@ -8,11 +8,11 @@
         Title="KadrWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="78*"></ColumnDefinition>
-            <ColumnDefinition Width="250*"></ColumnDefinition>
-            <ColumnDefinition Width="272*"></ColumnDefinition>
-            <ColumnDefinition Width="100*"></ColumnDefinition>
-            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="39*"></ColumnDefinition>
+            <ColumnDefinition Width="125*"></ColumnDefinition>
+            <ColumnDefinition Width="111*"></ColumnDefinition>
+            <ColumnDefinition Width="75*"></ColumnDefinition>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -20,7 +20,7 @@
             <RowDefinition Height="327*"></RowDefinition>
             <RowDefinition Height="113*"></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False" x:Name="EmployeesGrid" ColumnWidth="*"  Margin="10,0,0,0"  Grid.Row="1" Grid.ColumnSpan="3" PreviewKeyDown="EmployeesGrid_PreviewKeyDown" SelectionChanged="EmployeesGrid_SelectionChanged"  >
+        <DataGrid CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False" x:Name="EmployeesGrid" ColumnWidth="*"  Margin="10,0,10,0"  Grid.Row="1" Grid.ColumnSpan="3" PreviewKeyDown="EmployeesGrid_PreviewKeyDown" SelectionChanged="EmployeesGrid_SelectionChanged"  >
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
                     <Style.Triggers>
@@ -44,7 +44,9 @@
 
 
         </DataGrid>
-        <Button Grid.Column="1" x:Name="Export" Content="Экспорт в csv" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="Export_Click" Cursor="Hand"/>
-        <Button Grid.Column="1" x:Name="Create" Content="Добавить нового" HorizontalAlignment="Left" Margin="10,47,0,0" Grid.Row="2" VerticalAlignment="Top"  Cursor="Hand" Click="Create_Click"/>
+        <Button Grid.Column="1" x:Name="Export" Content="Экспорт в csv" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Click="Export_Click" Cursor="Hand" Height="32" Width="120"/>
+        <Button Grid.Column="1" x:Name="Create" Content="Добавить нового" HorizontalAlignment="Left" Margin="10,47,0,0" Grid.Row="2" VerticalAlignment="Top"  Cursor="Hand" Click="Create_Click" Height="32" Width="146"/>
+        <WpfPlot x:Name="EmployersStatistic" Grid.Column="2"  Margin="169,5,5,10" Grid.Row="2"   Grid.ColumnSpan="3"  />
+
     </Grid>
 </Window>

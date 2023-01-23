@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/4Lh6uTpOVEcTUFEh52ePVAUKDYycUUi6j06T3ueQ+kn5gYtJAcZ8bnn2e7kxZnL3QMYcXN733BWxtkSIFlJcg==",
+  "dgSpecHash": "rCOwolMYUZPc8GNyq7Lt/77BXytYVOpWCtDMFv8s1VicQ4zZfNX4UUtXMJeDyxwLUARM6HJODZDj3hFhhQFi8Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ilyich\\OneDrive\\Документы\\GitHub\\Mega\\Mega\\Mega\\Mega.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Ilyich\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\Ilyich\\.nuget\\packages\\restsharp\\108.0.3\\restsharp.108.0.3.nupkg.sha512",
     "C:\\Users\\Ilyich\\.nuget\\packages\\scottplot\\4.1.60\\scottplot.4.1.60.nupkg.sha512",
+    "C:\\Users\\Ilyich\\.nuget\\packages\\scottplot.wpf\\4.1.60\\scottplot.wpf.4.1.60.nupkg.sha512",
     "C:\\Users\\Ilyich\\.nuget\\packages\\system.drawing.common\\4.7.2\\system.drawing.common.4.7.2.nupkg.sha512",
     "C:\\Users\\Ilyich\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Ilyich\\.nuget\\packages\\system.text.json\\5.0.1\\system.text.json.5.0.1.nupkg.sha512"

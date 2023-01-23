@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="Окно повара" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="IngridientsBtn" Content="Ингридиенты" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="IngridientsBtn_Click"/>
-        <Button Content="Блюда" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="IngridientsBtn" Content="Ингридиенты и блюда" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="IngridientsBtn_Click" Width="200" Cursor="Hand"/>
         <Button Content="Выход" HorizontalAlignment="Left" Margin="715,10,0,0" VerticalAlignment="Top" Background="#FFC52B2B"/>
         <DataGrid Margin="0,112,427,10" CanUserAddRows="False" x:Name="OrdersGrid" AutoGenerateColumns="False" SelectionChanged="OrdersGrid_SelectionChanged" PreviewKeyDown="OrdersGrid_PreviewKeyDown">
             <DataGrid.Columns>

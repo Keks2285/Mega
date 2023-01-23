@@ -13,7 +13,7 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="RestSharp" Version="108.0.3" />
-    <PackageReference Include="ScottPlot" Version="4.1.60" />
+    <PackageReference Include="ScottPlot.WPF" Version="4.1.60" />
   </ItemGroup>
 
 </Project>

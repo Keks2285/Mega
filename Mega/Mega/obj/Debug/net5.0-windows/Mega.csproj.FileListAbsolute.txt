@@ -179,3 +179,6 @@ C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5
 C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\Mega.pdb
 C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\Mega.genruntimeconfig.cache
 C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\ref\Mega.dll
+C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\Stocker.g.cs
+C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\bin\Debug\net5.0-windows\ScottPlot.WPF.dll
+C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\Stocker.baml

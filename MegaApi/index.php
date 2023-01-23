@@ -22,6 +22,8 @@ switch ($_SERVER['REQUEST_METHOD']){
             case "deleteOrder": deleteOrder($connect, $_POST); break;
             case "updateIngridient": updateIngridient($connect, $_POST); break;
             case "createIngridient": createIngridient($connect, $_POST); break;
+            case "createDish": createDish($connect, $_POST); break;
+            case "updateDish": updateDish($connect, $_POST); break;
         }
     }
     break;

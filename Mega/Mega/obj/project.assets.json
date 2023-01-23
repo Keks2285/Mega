@@ -164,6 +164,21 @@
           "lib/netstandard2.0/ScottPlot.dll": {}
         }
       },
+      "ScottPlot.WPF/4.1.60": {
+        "type": "package",
+        "dependencies": {
+          "ScottPlot": "4.1.60"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/ScottPlot.WPF.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/ScottPlot.WPF.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "System.Drawing.Common/4.7.2": {
         "type": "package",
         "dependencies": {
@@ -487,6 +502,28 @@
         "scottplot.nuspec"
       ]
     },
+    "ScottPlot.WPF/4.1.60": {
+      "sha512": "W7SCgrtmClY0Qb2Uf8FRAz552GMcFcJ4N2EXu3/CKVdhYNZ8BT4wVRKvedqLNvklB3sVcodv1oNRwsBjOlGKyA==",
+      "type": "package",
+      "path": "scottplot.wpf/4.1.60",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.ico",
+        "icon.png",
+        "lib/net461/ScottPlot.WPF.dll",
+        "lib/net472/ScottPlot.WPF.dll",
+        "lib/net48/ScottPlot.WPF.dll",
+        "lib/net5.0-windows7.0/ScottPlot.WPF.dll",
+        "lib/net6.0-windows7.0/ScottPlot.WPF.dll",
+        "lib/netcoreapp3.1/ScottPlot.WPF.dll",
+        "scottplot.wpf.4.1.60.nupkg.sha512",
+        "scottplot.wpf.nuspec",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
     "System.Drawing.Common/4.7.2": {
       "sha512": "I2y4KBK3VCvU/WqE2xv7NjQ67maXHttkFSHYKgU2evrG9Yqh0oFjfORXt5hZTk+BVjdyFo2h0/YQZsca33BGmg==",
       "type": "package",
@@ -604,7 +641,7 @@
       "MaterialDesignThemes >= 4.7.0",
       "Newtonsoft.Json >= 13.0.2",
       "RestSharp >= 108.0.3",
-      "ScottPlot >= 4.1.60"
+      "ScottPlot.WPF >= 4.1.60"
     ]
   },
   "packageFolders": {
@@ -671,7 +708,7 @@
             "target": "Package",
             "version": "[108.0.3, )"
           },
-          "ScottPlot": {
+          "ScottPlot.WPF": {
             "target": "Package",
             "version": "[4.1.60, )"
           }

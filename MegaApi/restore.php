@@ -13,7 +13,8 @@ function createbackup(){
         "IngredientsInADish",
         "Warehouse",
         "Supply",
-        "DishesInOrder"
+        "DishesInOrder",
+        "DeliveryIngredients"
     );
     // $result = mysqli_query($connect,"SHOW TABLES");
     // while($row = mysqli_fetch_row($result)){
@@ -32,7 +33,7 @@ function createbackup(){
     $return .= "\n".$row2[1].";\n";
     for($i=0;$i<$num_fields;$i++){
         while($row = mysqli_fetch_row($result)){
-          $return .= "INSERT INTO ".$table." VALUES(";
+          $return .= "INSERT INTO `".$table."` VALUES(";
           for($j=0;$j<$num_fields;$j++){
             $row[$j] = addslashes($row[$j]);
             if(isset($row[$j])){ $return .= '"'.$row[$j].'"';}
@@ -70,7 +71,8 @@ function executebackup($data)
     "Order",
     "Dishes",
     "Employees",
-    "Categories"
+    "Categories",
+    "DeliveryIngredients"
 );
 //   foreach($tables as $table){
 //    $result = mysqli_query($connection,"Delete from ".$table." where 1");

@@ -52,5 +52,11 @@ namespace Mega
             return true;
         }
 
+        public static bool CheckDate(string date)
+        {
+            DateTime dt;
+            return DateTime.TryParse(date, out dt);
+        }
+
     }
 }

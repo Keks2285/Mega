@@ -145,13 +145,42 @@ function updateOrder($connect, $data){
   }
 
 
+  function createDish($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+     //   print_r($data);
+          $deleteUser =$connect->prepare("INSERT INTO `Dishes`( `NameDishes`, `Cost`, `Weight`) VALUES (?,?,?)");
+          $deleteUser ->execute(array(
+            strval($data["name"]),
+            strval($data["cost"]),
+            strval($data["weight"])
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"ingridient was created",
+            "id"=>$connect->lastInsertId()
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"ingridient wasn't created"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
 
 
 
   function updateIngridient($connect, $data){
     //  echo $data["email"]; die();
       try{
-        print_r($data);
+       // print_r($data);
           $deleteUser =$connect->prepare("UPDATE `Ingredients` SET `NameIngredients`=? WHERE `ID_Ingredients`=?");
           $deleteUser ->execute(array(
             strval($data["name"]),
@@ -167,6 +196,35 @@ function updateOrder($connect, $data){
           $responce=[
               "status"=>false,
               "message"=>"ingridient wasn't updated"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
+  function updateDish($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+       // print_r($data);
+          $deleteUser =$connect->prepare("UPDATE `Dishes` SET `NameDishes`=?,`Cost`=?,`Weight`=? WHERE `ID_Dishes`=?");
+          $deleteUser ->execute(array(
+            strval($data["name"]),
+            strval($data["cost"]),
+            strval($data["weight"]),
+            $data["id"]
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"dish was updated"
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"dish wasn't updated"
           ];
           echo json_encode($responce);
       }
