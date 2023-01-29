@@ -234,6 +234,101 @@ function updateOrder($connect, $data){
 
 
 
+  function updateWareHouse($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+       // print_r($data);
+          $deleteUser =$connect->prepare("UPDATE `Warehouse` SET `Cells`=?,`Amount`=?,`Adres`=? WHERE `ID_Warehouse`=?");
+          $deleteUser ->execute(array(
+            strval($data["cells"]),
+            strval($data["amount"]),
+            strval($data["adres"]),
+            $data["id"]
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"dish was updated"
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"dish wasn't updated"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+  function updateSupply($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+       // print_r($data);
+          $deleteUser =$connect->prepare("UPDATE `Supply` SET `Provider`=?,`DateSupply`=?,`CostSupply`=? WHERE `ID_Supply`=?");
+          $deleteUser ->execute(array(
+            strval($data["provider"]),
+            strval($data["date"]),
+            strval($data["cost"]),
+            $data["id"]
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"dish was updated"
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"dish wasn't updated"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
+
+  function removeWareHouse($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+          $deleteUser =$connect->prepare("DELETE FROM `Warehouse` WHERE ID_Warehouse=?");
+          $deleteUser ->execute(array($data["id"]));
+  
+          
+      } catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"user not deleted"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
+  function removeSupply($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+          $deleteUser =$connect->prepare("DELETE FROM `Supply` WHERE ID_Supply=?");
+          $deleteUser ->execute(array($data["id"]));
+  
+          
+      } catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"user not deleted"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
 
 
 function removeEployer($connect, $data){
@@ -269,6 +364,71 @@ function removeEployer($connect, $data){
   
      
   }
+
+
+  function createSupply($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+     //   print_r($data);
+          $deleteUser =$connect->prepare("INSERT INTO `Supply`(`Provider`, `DateSupply`, `CostSupply`, `Warehouse_ID`) VALUES (?,?,?,?)");
+          $deleteUser ->execute(array(
+            strval($data["provider"]),
+            strval($data["date"]),
+            strval($data["cost"]),
+            strval($data["warehouse_id"])    
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"ingridient was created",
+            "id"=>$connect->lastInsertId()
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"ingridient wasn't created"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+  function createWareHouse($connect, $data){
+    //  echo $data["email"]; die();
+      try{
+     //   print_r($data);
+          $deleteUser =$connect->prepare("UPDATE `Warehouse` SET `Cells`=?,`Amount`=?,`Adres`=? WHERE `ID_Warehouse`=?");
+          $deleteUser ->execute(array(
+            strval($data["cells"]),
+            strval($data["amount"]),
+            strval($data["adres"])
+        ));
+        $responce=[
+            "status"=>true,
+            "message"=>"ingridient was created",
+            "id"=>$connect->lastInsertId()
+        ];
+        echo json_encode($responce);
+        }
+        catch (Exception $e){
+          $responce=[
+              "status"=>false,
+              "message"=>"ingridient wasn't created"
+          ];
+          echo json_encode($responce);
+      }
+  
+     
+  }
+
+
+
+
+
+
+
 
 
   function createEmploye ($connect, $data){

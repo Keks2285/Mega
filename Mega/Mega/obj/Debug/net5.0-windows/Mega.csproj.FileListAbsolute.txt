@@ -182,3 +182,5 @@ C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5
 C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\Stocker.g.cs
 C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\bin\Debug\net5.0-windows\ScottPlot.WPF.dll
 C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\Stocker.baml
+C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\WarehousesSuppliesWindow.g.cs
+C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\obj\Debug\net5.0-windows\WarehousesSuppliesWindow.baml

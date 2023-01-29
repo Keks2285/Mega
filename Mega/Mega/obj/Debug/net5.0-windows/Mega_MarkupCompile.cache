@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Ilyich\OneDrive\Документы\GitHub\Mega\Mega\Mega\App.xaml
-8-707255182
+9-608360044
 
-181471170475
+20-315033854
 207835570950
-AdminWindow.xaml;Authorization.xaml;EmployerCreate.xaml;IngridientsWindow.xaml;KadrWindow.xaml;MainWindow.xaml;Povar.xaml;Stocker.xaml;
+AdminWindow.xaml;Authorization.xaml;EmployerCreate.xaml;IngridientsWindow.xaml;KadrWindow.xaml;MainWindow.xaml;Povar.xaml;Stocker.xaml;WarehousesSuppliesWindow.xaml;
 
 False
 

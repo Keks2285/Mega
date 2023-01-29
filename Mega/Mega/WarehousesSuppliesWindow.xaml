@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mega"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Mega.WarehousesSuppliesWindow"
+        mc:Ignorable="d"
+        Title="WarehousesSuppliesWindow" Height="450" Width="800">
+    <Grid>
+
+
+        <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="42" Margin="365,271,10,0" >
+            <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="Adres" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Адрес"  Margin="9,0,9,0" Height="40"/>
+        </Border>
+        <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="42" Margin="365,318,193,0" >
+            <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="CellsTb" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Ячейки"  Margin="9,0,9,0" Height="40"/>
+        </Border>
+        <DataGrid x:Name="WarehousesList" CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False"  ColumnWidth="*"  Margin="376,10,0,168" PreviewKeyDown="WarehousesList_PreviewKeyDown"   >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Adres}"  CanUserSort="True" Header="Адрес"/>
+                <DataGridTextColumn Binding="{Binding Cells}"  CanUserSort="True" Header="Ячейки"/>
+                <DataGridTextColumn Binding="{Binding Amount}"  CanUserSort="True" Header="Количество"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="42" Margin="612,318,10,0" >
+            <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="AmmountTb" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Количество"  Margin="9,0,9,0" Height="40"/>
+        </Border>
+        <Button Content="Добавить склад" HorizontalAlignment="Left" Margin="612,365,0,0" VerticalAlignment="Top" Height="38" Width="178" x:Name="CreateWareHousebtn" Click="CreateWareHousebtn_Click"/>
+        <DataGrid x:Name="Supplies" CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False"  ColumnWidth="*"  Margin="0,109,456,15" PreviewKeyDown="Supplies_PreviewKeyDown"   >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Provider}"  CanUserSort="True" Header="Поставщик"/>
+                <DataGridTextColumn Binding="{Binding DateSupply}"  CanUserSort="True" Header="Дата"/>
+                <DataGridTextColumn Binding="{Binding CostSupply}"  CanUserSort="True" Header="Стоимость"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

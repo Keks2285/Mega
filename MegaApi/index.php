@@ -24,6 +24,13 @@ switch ($_SERVER['REQUEST_METHOD']){
             case "createIngridient": createIngridient($connect, $_POST); break;
             case "createDish": createDish($connect, $_POST); break;
             case "updateDish": updateDish($connect, $_POST); break;
+            case "createDeliverIngridients": createDeliverIngridients($connect, $_POST); break;
+            case "createSupply": createSupply($connect, $_POST); break;
+            case "createWareHouse": createWareHouse($connect, $_POST); break;
+            case "updateWareHouse": updateWareHouse($connect, $_POST); break;
+            case "updateSupply": updateSupply($connect, $_POST); break;
+            case "removeSupply": removeSupply($connect, $_POST); break;
+            case "removeWareHouse": removeWareHouse($connect, $_POST); break;
         }
     }
     break;
@@ -35,6 +42,8 @@ switch ($_SERVER['REQUEST_METHOD']){
             case "getOrders": getOrders($connect); break;
             case "getDishesInOrders": getDishesInOrders($connect); break;
             case "getIngridients": getIngridients($connect); break;
+            case "getWarehouses": getWarehouses($connect); break;
+            case "getSupplies": getSupplies($connect); break;
         }
 
     }

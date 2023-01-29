@@ -59,6 +59,13 @@ namespace Mega
                         this.Hide();
                         break;
                     }
+                case "Кладовщик":
+                    {
+                        Window W = new Stocker();
+                        W.Show();
+                        this.Hide();
+                        break;
+                    }
             }
         }
 

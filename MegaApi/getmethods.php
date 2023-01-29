@@ -26,9 +26,34 @@ function getDumps($connect){
    echo json_encode($dumpsList);
 }
 
+function getSupplies($connect){
+
+   try{
+      $searchUser=$connect->prepare("SELECT * FROM `Supply` ");
+      $searchUser->execute();
+      $listUser=$searchUser->fetchAll();
+
+      echo json_encode($listUser);
+   } catch (PDOException $e){
+      http_response_code(404);
+   }
+}
+
 function getIngridients($connect){
    try{
       $searchUser=$connect->prepare("SELECT * FROM `Ingredients` ");
+      $searchUser->execute();
+      $listUser=$searchUser->fetchAll();
+
+      echo json_encode($listUser);
+   } catch (PDOException $e){
+      http_response_code(404);
+   }
+}
+
+function getWarehouses($connect){
+   try{
+      $searchUser=$connect->prepare("SELECT * FROM `Warehouse` ");
       $searchUser->execute();
       $listUser=$searchUser->fetchAll();
 

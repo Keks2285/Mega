@@ -64,3 +64,35 @@ function createDishesInOrder($connect, $data){
         echo json_encode($responce);
     }
 }
+
+
+function createDeliverIngridients($connect, $data){
+    try{
+
+        //var_dump($data);die(0);
+        $createEmploye=$connect->prepare(
+        "INSERT INTO `DeliveryIngredients`( `Ingredients_ID`, `Supply_ID`) VALUES (?,?)"
+        );
+        
+        //if(empty($data["middlename"])) $data["middlename"]="-";
+        $createEmploye->execute(array(
+            $data["ingredients_id"],
+            $data["supply_id"]
+        ));
+        $lastinsertOrder=$connect->lastInsertId();
+        $responce=[
+            "status"=>true,
+            "message"=>"DishesInOrder created"
+        ];
+        echo json_encode($responce);
+        //var_dump($data); die();
+       // exit();
+        //$addedEmploye=$createEmploye->fetchAll();
+    } catch (PDOException $e) {
+         $responce=[
+            "status"=>false,
+            "message"=>"DishesInOrder not created"
+        ];
+        echo json_encode($responce);
+    }
+}
