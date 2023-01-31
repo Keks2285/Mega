@@ -107,6 +107,13 @@ namespace Mega
             w.Show();
             this.Hide();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new MainWindow();
+            this.Hide();
+            w.Show();
+        }
     }
 }
 

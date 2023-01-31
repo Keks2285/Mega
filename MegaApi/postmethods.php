@@ -399,7 +399,7 @@ function removeEployer($connect, $data){
     //  echo $data["email"]; die();
       try{
      //   print_r($data);
-          $deleteUser =$connect->prepare("UPDATE `Warehouse` SET `Cells`=?,`Amount`=?,`Adres`=? WHERE `ID_Warehouse`=?");
+          $deleteUser =$connect->prepare("INSERT INTO `Warehouse`( `Cells`, `Amount`, `Adres`) VALUES(?,?,?)");
           $deleteUser ->execute(array(
             strval($data["cells"]),
             strval($data["amount"]),

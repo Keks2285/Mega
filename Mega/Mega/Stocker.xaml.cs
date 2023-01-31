@@ -158,5 +158,12 @@ namespace Mega
             w.Show();
             this.Hide();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new MainWindow();
+            this.Hide();
+            w.Show();
+        }
     }
 }

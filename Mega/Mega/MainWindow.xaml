@@ -5,24 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:local="clr-namespace:Mega"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowState="Maximized"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid >
-        <Button x:Name="Authorization" Content="Авторизация сотрудника" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="Authorization_Click"/>
-        <Label Content="Наше меню" HorizontalAlignment="Left" Margin="642,4,0,0" VerticalAlignment="Top"/>
-        <DataGrid CanUserDeleteRows="False" x:Name="Menu" Margin="531,33,10,118" CanUserAddRows="False" AutoGenerateColumns="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="237*"></ColumnDefinition>
+            <ColumnDefinition Width="177*"></ColumnDefinition>
+            <ColumnDefinition Width="386*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="Authorization" Content="Авторизация сотрудника"  HorizontalAlignment="Right" VerticalAlignment="Top" Click="Authorization_Click" Height="32" Width="196" Grid.Column="2"/>
+        <Label Content="Наше меню" HorizontalAlignment="Left" Margin="158,102,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Width="150" Height="24">
+
+        </Label>
+        <DataGrid CanUserDeleteRows="False" x:Name="Menu" Margin="34,140,10,11" CanUserAddRows="False" AutoGenerateColumns="False" Grid.Column="2">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=NameDishes}"  CanUserSort="True" Header="Название"></DataGridTextColumn>
                 <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Cost}" CanUserSort="True" Header="Стоиость"></DataGridTextColumn>
                 <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Weight}" CanUserSort="True" Header="Вес в г."></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Border CornerRadius="15" BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="37" Margin="225,10,274,0" >
+        <Border CornerRadius="15" BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="37" Margin="22,10,55,0" >
             <TextBox FontSize="14" x:Name="NameDish" BorderThickness="0"  Background="Transparent"   Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Название"  Margin="9,0,9,0" Height="40"/>
         </Border>
-        <Button x:Name="Search" Content="Поиск в меню" HorizontalAlignment="Left" Margin="400,66,0,0" VerticalAlignment="Top" Click="Search_Click"/>
-        <Button x:Name="AddInOreder" Content="Добавить в заказ" HorizontalAlignment="Left" Margin="380,103,0,0" VerticalAlignment="Top" Click="AddInOreder_Click"/>
-        <ListView Background="AliceBlue" x:Name="OrderList" Margin="0,66,556,10" KeyDown="OrderList_KeyDown">
+        <Button x:Name="Search" Content="Поиск в меню" HorizontalAlignment="Left" Margin="13,12,0,0" VerticalAlignment="Top" Click="Search_Click" Grid.Column="1" Height="32" Width="76"/>
+        <Button x:Name="AddInOreder" Content="Добавить в заказ" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Click="AddInOreder_Click" Grid.Column="1" Height="32" Width="176"/>
+        <ListView Background="AliceBlue" x:Name="OrderList" Margin="0,103,4,10" KeyDown="OrderList_KeyDown">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=NameDishes}">Блюдо</GridViewColumn>
@@ -30,7 +38,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="CeateOrder" Content="Оформить заказ" HorizontalAlignment="Left" Margin="380,140,0,0" VerticalAlignment="Top" Click="CeateOrder_Click" />
-        <Label Content="Итоговая стоимость:" x:Name="TotalPrice" HorizontalAlignment="Left" Margin="327,193,0,0" VerticalAlignment="Top" Width="170"/>
+        <Button x:Name="CeateOrder" Content="Оформить заказ" HorizontalAlignment="Left" Margin="113,140,0,0" VerticalAlignment="Top" Click="CeateOrder_Click" Grid.Column="1" Height="32" Width="0" />
+        <Label Content="Итоговая стоимость:" x:Name="TotalPrice" HorizontalAlignment="Left" Margin="1,177,0,0" VerticalAlignment="Top" Width="166" Height="24" Grid.Column="1"/>
     </Grid>
 </Window>

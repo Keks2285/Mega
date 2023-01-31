@@ -5,39 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mega"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Mega.Stocker"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowState="Maximized"
         Title="Stocker" Height="450" Width="800">
     <Grid>
-        <DataGrid CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False" x:Name="IngridientsGrid" ColumnWidth="*"  Margin="635,80,10,106"   >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="157*"></ColumnDefinition>
+            <ColumnDefinition Width="408*"></ColumnDefinition>
+            <ColumnDefinition Width="235*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False" x:Name="IngridientsGrid" ColumnWidth="*"  Margin="22,80,10,106" Grid.Column="2"   >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding NameIngredients}" IsReadOnly="True"  CanUserSort="True" Header="Название"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid  CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False" x:Name="IngridientsInSupplyGrid" ColumnWidth="*"  Margin="10,56,635,75" PreviewKeyDown="IngridientsInSupplyGrid_PreviewKeyDown"   >
+        <DataGrid  CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False" x:Name="IngridientsInSupplyGrid" ColumnWidth="*"  Margin="10,56,10,74" PreviewKeyDown="IngridientsInSupplyGrid_PreviewKeyDown"   >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding NameIngredients}" IsReadOnly="True" CanUserSort="True" Header="Название"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="В поставке" HorizontalAlignment="Left" Margin="36,26,0,0" VerticalAlignment="Top"/>
-        <Label Content="Список ингридиентов" HorizontalAlignment="Left" Margin="652,39,0,0" VerticalAlignment="Top"/>
+        <Label Content="В поставке" HorizontalAlignment="Left" Margin="36,26,0,0" VerticalAlignment="Top" Height="24" Width="67"/>
+        <Label Content="Список ингридиентов" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Width="132" Height="24"/>
 
 
-        <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="42" Margin="182,56,376,0" >
+        <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="42" Margin="0,26,85,0" Grid.Column="1" >
             <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="Provider" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Поставщик"  Margin="9,0,9,0" Height="40"/>
         </Border>
-        <Button x:Name="AddInSupplyBtn" Content="Добавить Ингридиент" HorizontalAlignment="Left" Margin="429,58,0,0" VerticalAlignment="Top" Height="40" Width="201" Click="AddInSupplyBtn_Click"/>
-        <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="42" Margin="182,103,376,0" >
+        <Button x:Name="AddInSupplyBtn" Content="Добавить Ингридиент" HorizontalAlignment="Left" Margin="204,182,0,0" VerticalAlignment="Top" Height="40" Width="201" Click="AddInSupplyBtn_Click" Grid.Column="1"/>
+        <Border CornerRadius="15"   BorderBrush="#FFABADB3" Background="White"  VerticalAlignment="Top" BorderThickness="1"  Height="41" Margin="5,129,201,0" Grid.Column="1" >
             <TextBox FontSize="14"  BorderThickness="0"  Background="Transparent"  x:Name="CostTb" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center"  materialDesign:HintAssist.Hint="Стоимость"  Margin="9,0,9,0" Height="40"/>
         </Border>
-        <DatePicker x:Name="DateSupply" HorizontalAlignment="Left" Margin="182,150,0,0" VerticalAlignment="Top" Height="42" Width="233" Style="{DynamicResource MaterialDesignDatePicker}"  materialDesign:HintAssist.Hint="Дата поставки" />
-        <DataGrid x:Name="WarehousesList" CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False"  ColumnWidth="*"  Margin="182,232,193,10"   >
+        <DatePicker x:Name="DateSupply" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Height="42" Width="233" Style="{DynamicResource MaterialDesignDatePicker}"  materialDesign:HintAssist.Hint="Дата поставки" Grid.Column="1" />
+        <DataGrid x:Name="WarehousesList" CanUserSortColumns="True"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False"  CanUserDeleteRows="True" CanUserAddRows="False"  ColumnWidth="*"  Margin="10,232,3,10" Grid.Column="1"   >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Adres}"  CanUserSort="True" Header="Склад"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Управление складами" HorizontalAlignment="Left" Margin="612,357,0,0" VerticalAlignment="Top" Width="178" Height="35" Click="Button_Click"/>
-        <Button x:Name="CreateSupplyBtn" Content="Создать поставку" HorizontalAlignment="Left" Margin="443,192,0,0" VerticalAlignment="Top" Height="35" Width="164" Click="CreateSupplyBtn_Click" Cursor="Hand" />
+        <Button Content="Управление складами" HorizontalAlignment="Right" Margin="0,0,60,42" VerticalAlignment="Bottom" Width="178" Height="35" Click="Button_Click" Grid.Column="1" Cursor="Hand" Grid.ColumnSpan="2"/>
+        <Button x:Name="CreateSupplyBtn" Content="Создать поставку" HorizontalAlignment="Left" Margin="24,184,0,0" VerticalAlignment="Top" Height="35" Width="164" Click="CreateSupplyBtn_Click" Cursor="Hand" Grid.Column="1" />
 
+        <Button x:Name="Back" Content="Выход" Background="#FFC52B2B" HorizontalAlignment="Right" Margin="0,397,10,0" VerticalAlignment="Bottom"  Grid.Column="2" Width="85" Cursor="Hand" Click="Back_Click" Height="32"/>
 
     </Grid>
 </Window>

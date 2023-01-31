@@ -42,7 +42,8 @@ namespace Mega
             req.AddParameter("amount", AmmountTb.Text);
             //req.AddParameter("date", DateSupply.SelectedDate!.Value.ToString("yyyy.MM.dd hh:mm"));
             //req.AddParameter("warehouse_id", (WarehousesList.SelectedItem as Warehouse)!.ID_Warehouse);
-            dynamic data = JsonConvert.DeserializeObject<dynamic>(Helper.client.Post(req).Content);
+            var res = Helper.client.Post(req);
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(res.Content);
             ModelsRepository.WarehousesList.Add(new Warehouse
             {
                 ID_Warehouse = data["id"],
@@ -137,6 +138,13 @@ namespace Mega
                 }
 
             }
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new Stocker();
+            this.Hide();
+            w.Show();
         }
     }
 }

@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="Окно повара" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="IngridientsBtn" Content="Ингридиенты и блюда" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="IngridientsBtn_Click" Width="200" Cursor="Hand"/>
-        <Button Content="Выход" HorizontalAlignment="Left" Margin="715,10,0,0" VerticalAlignment="Top" Background="#FFC52B2B"/>
-        <DataGrid Margin="0,112,427,10" CanUserAddRows="False" x:Name="OrdersGrid" AutoGenerateColumns="False" SelectionChanged="OrdersGrid_SelectionChanged" PreviewKeyDown="OrdersGrid_PreviewKeyDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="479*"></ColumnDefinition>
+            <ColumnDefinition Width="321*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="IngridientsBtn" Content="Ингридиенты и блюда" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="IngridientsBtn_Click" Width="200" Cursor="Hand" Height="32"/>
+        <Button Content="Выход" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFC52B2B" Grid.Column="1" Width="75" Height="32" Click="Button_Click" Cursor="Hand"/>
+        <DataGrid Margin="0,112,30,10" CanUserAddRows="False" x:Name="OrdersGrid" AutoGenerateColumns="False" SelectionChanged="OrdersGrid_SelectionChanged" PreviewKeyDown="OrdersGrid_PreviewKeyDown">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=TableNumber}" IsReadOnly="True"  CanUserSort="True" Header="Номер"></DataGridTextColumn>
                 <DataGridTextColumn Binding="{Binding Path=Cost}" IsReadOnly="True" CanUserSort="True" Header="Стоимость"></DataGridTextColumn>
@@ -17,7 +21,7 @@
                 <DataGridTextColumn Binding="{Binding Path=Status}"  CanUserSort="True" Header="Статус"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Margin="560,112,11,0" x:Name="DishesDg" AutoGenerateColumns="False" CanUserAddRows="False">
+        <DataGrid Margin="65,112,10,0" x:Name="DishesDg" AutoGenerateColumns="False" CanUserAddRows="False" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding NameDishes}" IsReadOnly="True"  CanUserSort="True" Header="Блюда"/>
             </DataGrid.Columns>
@@ -26,3 +30,4 @@
 
     </Grid>
 </Window>
+

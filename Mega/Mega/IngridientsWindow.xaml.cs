@@ -128,7 +128,7 @@ namespace Mega
             req.AddHeader("Content-Type", "application/x-www-form-urlencoded");
             req.AddParameter("name", NameDishTb.Text);
             req.AddParameter("cost", CostTb.Text);
-            req.AddParameter("weigth",WeghtTb.Text);
+            req.AddParameter("weight", WeghtTb.Text);
             var res = Helper.client.Post(req);
             dynamic data = JsonConvert.DeserializeObject<dynamic>(res.Content);
             if (data.id.Value == "0")
